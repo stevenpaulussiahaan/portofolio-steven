@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.nama }} · Portofolio</title>
+  <meta name="description" content="Portofolio {{ p.nama }}, mahasiswa {{ p.prodi }} {{ p.kampus }}.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top">SPS</a>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#skill">Skill</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#musik">Musik</a>
+    <a href="#target">Target</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Portofolio</p>
+      <h1>{{ p.nama }}</h1>
+      <p class="tagline">{{ p.tagline }}</p>
+      <p class="lead">{{ p.ringkasan }}</p>
+      <div class="chips">
+        <span>{{ p.prodi }}</span>
+        <span>{{ p.kampus }}</span>
+        <span>Semester {{ p.semester }}</span>
+      </div>
+      <a class="btn" href="#proyek">Lihat proyek</a>
+    </div>
+    <div class="hero-photo">
+      <img src="{{ url_for('static', filename='img/profil.jpg') }}" alt="Foto {{ p.nama }}">
+    </div>
+  </section>
+
+  <section id="tentang">
+    <h2>Tentang saya</h2>
+    <div class="card info">
+      <dl>
+        <div><dt>Nama</dt><dd>{{ p.nama }}</dd></div>
+        <div><dt>Tempat, tanggal lahir</dt><dd>{{ p.lahir }}</dd></div>
+        <div><dt>Kampus</dt><dd>{{ p.kampus }}</dd></div>
+        <div><dt>Program studi</dt><dd>{{ p.prodi }}</dd></div>
+        <div><dt>NIM</dt><dd>{{ p.nim }}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <h2>Pendidikan &amp; organisasi</h2>
+    <div class="timeline">
+      {% for e in pendidikan %}
+      <article class="card">
+        <h3>{{ e.judul }}</h3>
+        <p class="meta">{{ e.tempat }} · {{ e.waktu }}</p>
+        <p>{{ e.detail }}</p>
+      </article>
+      {% endfor %}
+      {% for o in organisasi %}
+      <article class="card accent">
+        <h3>{{ o.judul }}</h3>
+        <p class="meta">{{ o.waktu }}</p>
+        <p>{{ o.detail }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="skill">
+    <h2>Teknologi &amp; keahlian</h2>
+    <div class="grid">
+      {% for kategori, daftar in skills.items() %}
+      <article class="card">
+        <h3>{{ kategori }}</h3>
+        <div class="chips">
+          {% for s in daftar %}<span>{{ s }}</span>{% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek &amp; karya</h2>
+    <div class="grid">
+      {% for pr in proyek %}
+      <article class="card">
+        <h3>{{ pr.judul }}</h3>
+        <p>{{ pr.deskripsi }}</p>
+        <div class="chips small">
+          {% for t in pr.tag %}<span>{{ t }}</span>{% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="musik">
+    <h2>Musik &amp; audio</h2>
+    <div class="card">
+      <p>{{ musik }}</p>
+    </div>
+  </section>
+
+  <section id="target">
+    <h2>Target &amp; kepemimpinan</h2>
+    <div class="grid">
+      {% for t in target %}
+      <article class="card accent">
+        <h3>{{ t.judul }}</h3>
+        <p>{{ t.detail }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="gallery">
+      {% for g in galeri %}
+      <img src="{{ url_for('static', filename=g) }}" alt="Foto {{ p.nama }}" loading="lazy">
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© {{ tahun }} {{ p.nama }} · {{ p.kampus }}</p>
+</footer>
+
+</body>
+</html>
