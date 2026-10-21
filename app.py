@@ -37,7 +37,7 @@ PENDIDIKAN = [
         "judul": "SMA",
         "tempat": "SMAS Sultan Iskandar Muda",
         "waktu": "Lulusan",
-        "detail": "Medali Perunggu bidang Kimia dan Biologi pada Olimpiade Siswa Indonesia (OSI).",
+        "detail": "Medali Perak bidang Kimia dan Biologi pada Olimpiade Siswa Indonesia (OSI)." "Medali Emas bidang Matematika pada Education Expo & Science Olympiad USU 2024."
     },
 ]
 
@@ -45,7 +45,7 @@ ORGANISASI = [
     {
         "judul": "Pengurus Himpunan Mahasiswa Matematika (HMM) USU",
         "waktu": "Periode 2026/2027",
-        "detail": "Dilantik pada awal Oktober 2026.",
+        "detail": "Dilantik pada September 2026.",
     },
 ]
 
@@ -53,7 +53,7 @@ SKILLS = {
     "Pemrograman": ["Python", "Flask", "Streamlit", "SymPy", "Pascal", "MATLAB", "Flutter"],
     "Matematika & Komputasi": ["Analisis Numerik", "Visualisasi Matriks", "Aplikasi Kalkulator"],
     "Penulisan Akademik": ["LaTeX", "BibTeX", "Template Jurnal", "Presentasi Lanjutan"],
-    "Musik & Audio": ["Drum", "Pop & Rock", "Pedal Reverb", "Equalizer & Mixing"],
+    "Musik & Audio": ["Gitar", "Pop & Rock", "Pedal Reverb", "Equalizer & Mixing"],
 }
 
 PROYEK = [
@@ -80,7 +80,7 @@ PROYEK = [
 ]
 
 MUSIK = (
-    "Di luar angka dan kode, saya seorang drummer yang menggemari genre pop dan rock "
+    "Di luar angka dan kode, saya seorang gitaris yang menggemari genre pop dan rock "
     "(termasuk band Vierra). Saya detail soal sound engineering praktis: sering "
     "bereksperimen dengan pedal reverb dan konfigurasi equalizer agar mixing suara "
     "terdengar pas saat bermain."
@@ -93,7 +93,7 @@ TARGET = [
     },
     {
         "judul": "Mathematics Sciences Competition (MSC) 2027",
-        "detail": "Mengambil peran strategis sebagai Ketua Panitia atau Koordinator Pembuat Soal.",
+        "detail": "Mengambil peran strategis sebagai Ketua / Koordinator Pembuat Soal.",
     },
 ]
 
